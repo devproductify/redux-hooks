@@ -2,11 +2,13 @@ const data = [
   {
     timestamp: 1619853614252,
     task: "Maintainence",
-    done: false
+    done: false,
+    type: "A"
   }, {
     timestamp: 1619853629952,
     task: "Gmail",
-    done: true
+    done: true,
+    type: "B"
   }
 ];
 

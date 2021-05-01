@@ -2,12 +2,15 @@ import data from './init.js';
 
 export default function reducer(state = data, evt) {
 
+  let timestamp = Date.now();
+
   // TODO: Replace with actions
   switch (evt.action) {
 
     case "INSERT":
-      console.log("Insert operation!");
-      break;
+      let { task, type } = evt.type;
+      type = (type === 0) ? 'A' : 'B';
+      return [...state, { task, done: false, timestamp, type }];
 
     case "DELETE":
       console.log("Delete operation!");
@@ -19,9 +22,7 @@ export default function reducer(state = data, evt) {
 
     default:
       console.log("Invalid operation!");
-      break;
+      return state;
 
   }
-
-  return state;
 };

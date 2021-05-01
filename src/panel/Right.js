@@ -27,6 +27,25 @@ export default function Right() {
     M.AutoInit();
   })
 
+  async function addToStore(evt) {
+
+    if (evt.key === 'Enter') {
+
+      const textRef = document.getElementById('task');
+      const optionRef = document.getElementById('category');
+
+      let task = textRef.value;
+      let type = optionRef.options.selectedIndex;
+
+      if (task.length === 0)
+        return;
+
+      await dispatch({ type: { task, type }, action: "INSERT" })
+      textRef.value = "";
+
+    }
+  }
+
   return (
     <>
 
@@ -36,16 +55,16 @@ export default function Right() {
       <div className="card" style={styles.card}>
         <div className="card-content">
 
-          <div class="input-field">
-            <select>
+          <div className="input-field">
+            <select id="category">
               <option value="1">Professional</option>
               <option value="2">Personal</option>
             </select>
             <label>Select category</label>
           </div>
 
-          <div class="input-field">
-            <input id="task" type="text" placeholder="Add desciption here..." />
+          <div className="input-field">
+            <input id="task" type="text" placeholder="Add desciption here..." onKeyUp={(evt) => addToStore(evt)} />
           </div>
 
         </div>

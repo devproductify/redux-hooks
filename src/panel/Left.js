@@ -15,10 +15,14 @@ export default function Left() {
   const context = useSelector(state => state);
   const dispatch = useDispatch();
 
+  console.log(context);
   return (
     <>
-      <ListItem key="a" type="A" data="Complete documentation" completed="checked" />
-      <ListItem key="b" type="B" data="Revamp codebase" completed="" />
+      {
+        context?.map((data) => {
+          return <ListItem key={data.timestamp} type={data.type} data={data.task} completed={data.done} />
+        })
+      }
     </>
   );
 };

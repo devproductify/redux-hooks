@@ -19,15 +19,15 @@ const styles = {
  * List item component (left)
  * @returns JSX.Element
  */
-export default function ListItem({ type, data, completed }) {
+export default function ListItem({ type, data, completed, key }) {
 
   return (
-    <div className="card" style={styles.card}>
+    <div key={key} className="card" style={styles.card}>
       <div className="card-content" style={styles.between}>
 
         <p>
           <label>
-            <input type="checkbox" checked={completed} />
+            <input type="checkbox" defaultChecked={completed} />
             <span> {data} <br /> {
               (type === 'A') ?
                 (<small className="red-text"> Professional </small>) :
