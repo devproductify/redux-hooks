@@ -15,10 +15,10 @@ export default function App() {
   return (
     <div className="row">
       <div className="col s12 m6">
-        <LeftPanel />
+        <RightPanel />
       </div>
       <div className="col s12 m6">
-        <RightPanel />
+        <LeftPanel />
       </div>
     </div>
   );
