@@ -1,7 +1,27 @@
 {
   "src/App.js": {
-    "description": "App component (main)",
+    "description": "App component (main)\n@returns JSX.Element",
     "displayName": "App",
+    "methods": []
+  },
+  "src/cmp/ListItem.js": {
+    "description": "List item component (left)\n@returns JSX.Element",
+    "displayName": "ListItem",
+    "methods": []
+  },
+  "src/cmp/ProgressCard.js": {
+    "description": "Progress card component (right)\n@returns JSX.Element",
+    "displayName": "ListItem",
+    "methods": []
+  },
+  "src/panel/Left.js": {
+    "description": "Left panel containing list of tasks\n@returns JSX.Element",
+    "displayName": "Left",
+    "methods": []
+  },
+  "src/panel/Right.js": {
+    "description": "Right panel for activity tracking and adding tasks\n@returns JSX.Element",
+    "displayName": "Right",
     "methods": []
   }
 }
