@@ -1,3 +1,6 @@
+/**
+ * Initial state (stub)
+ */
 const data = [
   {
     timestamp: 1619853614252,

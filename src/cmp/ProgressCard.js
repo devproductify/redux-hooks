@@ -1,6 +1,7 @@
 // Environment dependencies
 import React from 'react';
 
+// Style configuration
 const styles = {
   card: {
     borderRadius: '1em',
@@ -12,7 +13,7 @@ const styles = {
  * Progress card component (right)
  * @returns JSX.Element
  */
-export default function ListItem({ title, progress, color }) {
+export default function ProgressCard({ title, progress, color }) {
 
   return (
     <div className="card" style={styles.card}>
@@ -22,8 +23,14 @@ export default function ListItem({ title, progress, color }) {
         <br />
 
         Completed : <strong>{progress}%</strong>
+
         <div className="progress">
-          <div className="determinate" style={{ "width": `${progress}%`, 'backgroundColor': `${color}` }}></div>
+          <div className="determinate"
+            style={{
+              "width": `${progress}%`,
+              'backgroundColor': `${color}`
+            }}>
+          </div>
         </div>
 
       </div>

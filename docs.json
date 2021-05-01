@@ -11,16 +11,16 @@
   },
   "src/cmp/ProgressCard.js": {
     "description": "Progress card component (right)\n@returns JSX.Element",
-    "displayName": "ListItem",
+    "displayName": "ProgressCard",
     "methods": []
   },
   "src/panel/Left.js": {
-    "description": "Left panel containing list of tasks\n@returns JSX.Element",
+    "description": "Left panel for activity tracking and adding tasks\n@returns JSX.Element",
     "displayName": "Left",
     "methods": []
   },
   "src/panel/Right.js": {
-    "description": "Right panel for activity tracking and adding tasks\n@returns JSX.Element",
+    "description": "Right panel containing list of tasks\n@returns JSX.Element",
     "displayName": "Right",
     "methods": []
   }

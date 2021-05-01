@@ -1,10 +1,15 @@
+// Stub (initial state)
 import data from './init.js';
 
-export default function reducer(state = data, evt) {
+/**
+ * Default reducer for redux store
+ * @param {{ timestamp:number, task:string, done:boolean, type:string }[]}:any state 
+ * @param { object }:any evt 
+ * @returns { object }:any
+ */
+function reducer(state = data, evt) {
 
   // console.log(evt.type, evt.action);
-
-  // TODO: Replace with actions
   switch (evt.action) {
 
     case "INSERT":
@@ -19,9 +24,9 @@ export default function reducer(state = data, evt) {
       });
 
     case "UPDATE":
-      for(let i=0; i<state.length; i++) {
-        if(state[i].timestamp === evt.type.uid) {
-          state[i] = {...state[i], done: !state[i].done};
+      for (let i = 0; i < state.length; i++) {
+        if (state[i].timestamp === evt.type.uid) {
+          state[i] = { ...state[i], done: !state[i].done };
           break;
         }
       }
@@ -32,6 +37,8 @@ export default function reducer(state = data, evt) {
 
   }
 
-  console.log(state);
+  // console.log(state);
   return state;
 };
+
+export default reducer;

@@ -2,6 +2,7 @@
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 
+// Style configuration
 const styles = {
   card: {
     borderRadius: '0.5em',
@@ -28,12 +29,13 @@ export default function ListItem({ type, data, completed, uid, dispatch }) {
         <p>
           <label>
             <input type="checkbox" defaultChecked={completed} onClick={() => dispatch({ type: { uid }, action: 'UPDATE' })} />
-            <span> {data} <br /> {
-              (type === 'A') ?
-                (<small className="red-text"> Professional </small>) :
-                (<small className="green-text"> Personal </small>)
-            } </span>
-
+            <span> {data} <br />
+              {
+                (type === 'A') ?
+                  (<small className="red-text"> Professional </small>) :
+                  (<small className="green-text"> Personal </small>)
+              }
+            </span>
           </label>
         </p>
 

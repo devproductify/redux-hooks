@@ -8,7 +8,9 @@ https://accelerator-one.github.io/redux-hooks/
 
 <br/>
 
-### Screenshots
+### Screenshot(s)
+
+<br/>
 
 ![todo-list](screenshots/a1.png)
 <br/>
