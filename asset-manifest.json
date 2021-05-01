@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/redux-hooks/static/css/main.784512a7.chunk.css",
-    "main.js": "/redux-hooks/static/js/main.f2d8ba3a.chunk.js",
+    "main.css": "/redux-hooks/static/css/main.fb0c2409.chunk.css",
+    "main.js": "/redux-hooks/static/js/main.fd35ef75.chunk.js",
     "runtime-main.js": "/redux-hooks/static/js/runtime-main.9f4878c4.js",
-    "static/js/2.26fd11dc.chunk.js": "/redux-hooks/static/js/2.26fd11dc.chunk.js",
+    "static/js/2.25e6ac41.chunk.js": "/redux-hooks/static/js/2.25e6ac41.chunk.js",
     "index.html": "/redux-hooks/index.html",
     "service-worker.js": "/redux-hooks/service-worker.js",
-    "static/js/2.26fd11dc.chunk.js.LICENSE.txt": "/redux-hooks/static/js/2.26fd11dc.chunk.js.LICENSE.txt"
+    "static/js/2.25e6ac41.chunk.js.LICENSE.txt": "/redux-hooks/static/js/2.25e6ac41.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9f4878c4.js",
-    "static/js/2.26fd11dc.chunk.js",
-    "static/css/main.784512a7.chunk.css",
-    "static/js/main.f2d8ba3a.chunk.js"
+    "static/js/2.25e6ac41.chunk.js",
+    "static/css/main.fb0c2409.chunk.css",
+    "static/js/main.fd35ef75.chunk.js"
   ]
 }
