@@ -20,7 +20,36 @@ const styles = {
 export default function Right() {
 
   // Store: map, dispatch
-  const context = useSelector(state => state);
+  const context = useSelector(state => {
+
+    let countA = 0;
+    let countB = 0;
+
+    let setA = 0;
+    let setB = 0;
+
+    state.forEach(data => {
+      if(data.type === 'A') {
+
+        if(data.done === true)
+          setA++;
+        countA++;
+
+      } else {
+
+        if(data.done === true)
+          setB++;
+        countB++;
+
+      }
+    });
+
+    let A = (setA/countA)*100;
+    let B = (setB/countB)*100;
+
+    return {A, B};
+
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,8 +78,8 @@ export default function Right() {
   return (
     <>
 
-      <ProgressCard title="Professional" progress="50" color="red" />
-      <ProgressCard title="Personal" progress="50" color="green" />
+      <ProgressCard title="Professional" progress={context.A} color="red" />
+      <ProgressCard title="Personal" progress={context.B} color="green" />
 
       <div className="card" style={styles.card}>
         <div className="card-content">
