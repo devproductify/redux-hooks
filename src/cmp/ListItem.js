@@ -19,15 +19,15 @@ const styles = {
  * List item component (left)
  * @returns JSX.Element
  */
-export default function ListItem({ type, data, completed, key }) {
+export default function ListItem({ type, data, completed, uid, dispatch }) {
 
   return (
-    <div key={key} className="card" style={styles.card}>
+    <div key={uid} className="card" style={styles.card}>
       <div className="card-content" style={styles.between}>
 
         <p>
           <label>
-            <input type="checkbox" defaultChecked={completed} />
+            <input type="checkbox" defaultChecked={completed} onClick={() => dispatch({ type: { uid }, action: 'UPDATE' })} />
             <span> {data} <br /> {
               (type === 'A') ?
                 (<small className="red-text"> Professional </small>) :
@@ -37,7 +37,7 @@ export default function ListItem({ type, data, completed, key }) {
           </label>
         </p>
 
-        <CloseIcon />
+        <CloseIcon onClick={() => dispatch({ type: { uid }, action: "DELETE" })} />
 
       </div>
     </div>

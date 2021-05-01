@@ -15,12 +15,12 @@ export default function Left() {
   const context = useSelector(state => state);
   const dispatch = useDispatch();
 
-  console.log(context);
   return (
     <>
+      { (context.length === 0)?<h4 style={{textAlign: 'center'}}> <br/> No tasks found!</h4>:"" }
       {
         context?.map((data) => {
-          return <ListItem key={data.timestamp} type={data.type} data={data.task} completed={data.done} />
+          return <ListItem key={data.timestamp} uid={data.timestamp} type={data.type} data={data.task} completed={data.done} dispatch={dispatch} />
         })
       }
     </>

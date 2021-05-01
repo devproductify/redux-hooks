@@ -29,25 +29,30 @@ export default function Right() {
     let setB = 0;
 
     state.forEach(data => {
-      if(data.type === 'A') {
+      if (data.type === 'A') {
 
-        if(data.done === true)
+        if (data.done === true)
           setA++;
         countA++;
 
       } else {
 
-        if(data.done === true)
+        if (data.done === true)
           setB++;
         countB++;
 
       }
     });
 
-    let A = (setA/countA)*100;
-    let B = (setB/countB)*100;
+    let A = (setA / countA) * 100;
+    let B = (setB / countB) * 100;
 
-    return {A, B};
+    if(countA === 0)
+      A = 0;
+    if(countB === 0)
+      B = 0;
+
+    return { A, B };
 
   });
   const dispatch = useDispatch();
@@ -56,6 +61,7 @@ export default function Right() {
     M.AutoInit();
   })
 
+  // Add task entry in store
   async function addToStore(evt) {
 
     if (evt.key === 'Enter') {
@@ -78,8 +84,8 @@ export default function Right() {
   return (
     <>
 
-      <ProgressCard title="Professional" progress={context.A} color="red" />
-      <ProgressCard title="Personal" progress={context.B} color="green" />
+      <ProgressCard title="Professional" progress={context.A.toFixed(2)} color="red" />
+      <ProgressCard title="Personal" progress={context.B.toFixed(2)} color="green" />
 
       <div className="card" style={styles.card}>
         <div className="card-content">

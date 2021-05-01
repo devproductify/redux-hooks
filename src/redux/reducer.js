@@ -2,27 +2,36 @@ import data from './init.js';
 
 export default function reducer(state = data, evt) {
 
-  let timestamp = Date.now();
+  // console.log(evt.type, evt.action);
 
   // TODO: Replace with actions
   switch (evt.action) {
 
     case "INSERT":
+      let timestamp = Date.now();
       let { task, type } = evt.type;
       type = (type === 0) ? 'A' : 'B';
       return [...state, { task, done: false, timestamp, type }];
 
     case "DELETE":
-      console.log("Delete operation!");
-      break;
+      return state.filter(data => {
+        return data.timestamp !== evt.type.uid;
+      });
 
     case "UPDATE":
-      console.log("Update operation!");
+      for(let i=0; i<state.length; i++) {
+        if(state[i].timestamp === evt.type.uid) {
+          state[i] = {...state[i], done: !state[i].done};
+          break;
+        }
+      }
       break;
 
     default:
       console.log("Invalid operation!");
-      return state;
 
   }
+
+  console.log(state);
+  return state;
 };
